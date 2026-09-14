@@ -123,7 +123,7 @@ export const EVENTS: FestEvent[] = [
     day: "Day 2",
     rules: [
       "Each team must consist of exactly 4 members.",
-      "\u00a0 \u00a0",
+      "\u00a0 \u00a0Registration Fee: ₹250 per participant.",
       "Participants must carry a mobile phone, and each team must have one laptop.",
       "Student Co- Ordinator: Ms. Hinana Parveen A K, Mob: 94953 91989",
     ],
