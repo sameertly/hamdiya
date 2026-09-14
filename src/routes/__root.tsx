@@ -84,20 +84,20 @@ function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy-deep/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link to="/" className="flex flex-col leading-tight">
+        <Link to="/" className="flex shrink-0 flex-col leading-tight">
           <span className="font-display text-lg font-semibold tracking-wide text-gold">
             Com<span className="text-ivory">Connect</span>
           </span>
-          <span className="text-[10px] uppercase tracking-[0.18em] text-white/50">
+          <span className="hidden text-[10px] uppercase tracking-[0.18em] text-white/50 sm:block">
             {FEST.college}
           </span>
         </Link>
-        <nav className="flex items-center gap-1 sm:gap-2">
+        <nav className="flex items-center gap-0.5 sm:gap-2">
           {NAV.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="px-2 py-1 text-xs font-medium uppercase tracking-[0.12em] text-white/70 transition-colors hover:text-gold sm:px-3 sm:text-[13px]"
+              className="whitespace-nowrap px-1.5 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-white/70 transition-colors hover:text-gold sm:px-3 sm:text-[13px] sm:tracking-[0.12em]"
               activeProps={{ className: "text-gold" }}
             >
               {item.label}

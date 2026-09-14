@@ -78,7 +78,7 @@ function HomePage() {
           <p className="text-xs uppercase tracking-[0.3em] text-gold sm:text-sm">
             {FEST.college} · {FEST.department}
           </p>
-          <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] text-ivory sm:text-6xl lg:text-7xl">
             ComConnect presents a{" "}
             <span className="text-gold">National Level</span> Management Fest
           </h1>
