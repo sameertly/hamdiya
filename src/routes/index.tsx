@@ -79,7 +79,7 @@ function HomePage() {
             {"JAMIA HAMDARD KANNUR CAMPUS\nPG DEPARTMENT OF COMMERCE"}
           </p>
           <h1 className="mx-auto mt-6 max-w-3xl whitespace-pre-line font-display text-4xl font-semibold leading-[1.05] text-ivory sm:text-6xl lg:text-7xl">
-            {"HAMDIYA 2K6\nNational Level Management Fest"}
+            {"HAMDIYA 2K26\nNational Level Management Fest"}
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-base text-white/75 sm:text-lg">
             Two days. Seven events. The sharpest business minds from colleges
