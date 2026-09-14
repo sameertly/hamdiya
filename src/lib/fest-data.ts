@@ -35,10 +35,10 @@ export const EVENTS: FestEvent[] = [
     secondPrize: "₹6,026",
     day: "Day 1",
     rules: [
-      "Open to participants from recognized institutions.",
-      "Teams of 2–4 members; individual entries not permitted.",
-      "Multiple rounds: screening, case study and final presentation.",
-      "Judges' decisions are final and binding.",
+      "Each team must consist of exactly 4 members.",
+      "Registration Fee: ₹250 per participant.",
+      "Participants must carry a mobile phone, and each team must have one laptop.",
+      "Student Co- Ordinator: Ms. Safa K P, Mob: 94978 59738",
     ],
   },
   {
