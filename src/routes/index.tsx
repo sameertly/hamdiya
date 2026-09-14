@@ -1,340 +1,283 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-import portrait from "@/assets/portrait.jpg";
-import projectFinance from "@/assets/project-finance.jpg";
-import projectWellness from "@/assets/project-wellness.jpg";
-import projectSystems from "@/assets/project-systems.jpg";
-import aboutDesk from "@/assets/about-desk.jpg";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
+import heroImg from "@/assets/hero.jpg";
+import { EVENTS, FEST } from "@/lib/fest-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mara Ellison — Independent Product Designer" },
+      {
+        title:
+          "ComConnect 2026 — National Level Management Fest | Jamia Hamdard Kannur Campus",
+      },
       {
         name: "description",
         content:
-          "Calm, considered interfaces for people who build carefully. Selected work, services and contact for Mara Ellison, independent product designer.",
+          "Jamia Hamdard Kannur Campus, PG Department of Commerce presents ComConnect — a National Level Management Fest on September 30 & October 1, 2026. Prize worth ₹1 Lakh+. Seven events across management, marketing, finance, HR and more.",
       },
-      { property: "og:title", content: "Mara Ellison — Independent Product Designer" },
+      {
+        property: "og:title",
+        content:
+          "ComConnect — National Level Management Fest · Sept 30 & Oct 1, 2026",
+      },
       {
         property: "og:description",
         content:
-          "Calm, considered interfaces for people who build carefully. Selected work, services and contact.",
+          "Prize worth ₹1 Lakh+. Seven events. Two days. Jamia Hamdard Kannur Campus, PG Department of Commerce.",
       },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+      {
+        property: "og:image",
+        content: new URL(heroImg, "https://id-preview--7747fa64-7a04-463d-ae3b-e03fedb32a97.lovable.app").href,
+      },
+      {
+        name: "twitter:image",
+        content: new URL(heroImg, "https://id-preview--7747fa64-7a04-463d-ae3b-e03fedb32a97.lovable.app").href,
+      },
+水    ],
   }),
-  component: Index,
+  component: HomePage,
 });
 
-const projects = [
-  {
-    image: projectFinance,
-    alt: "Ledger & Loop personal finance dashboard on a laptop in soft morning light",
-    category: "Fintech",
-    year: "2024",
-    title: "Ledger & Loop",
-    description:
-      "A personal finance app that treats numbers as a calm ledger, not a dashboard of alarm bells.",
-  },
-  {
-    image: projectWellness,
-    alt: "Tidepool meditation app on a phone resting on linen fabric",
-    category: "Health",
-    year: "2023",
-    title: "Tidepool",
-    description:
-      "A breathing-and-sleep companion built around slow interaction and no streaks or guilt.",
-  },
-  {
-    image: projectSystems,
-    alt: "Typography specimen sheets and grid layouts on warm paper",
-    category: "Design systems",
-    year: "2023",
-    title: "Almanac UI",
-    description:
-      "A warm, accessible design system powering a nonprofit's four products from one codebase.",
-  },
-];
+function useReveal() {
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        }
+      },
+      { threshold: 0.12 },
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+}
 
-const services = [
-  {
-    title: "Product & interface design",
-    description:
-      "End-to-end design for web and mobile — from first sketch to polished, shipped screens.",
-  },
-  {
-    title: "Design systems",
-    description:
-      "Tokens, components and documentation that let a team move fast without breaking trust.",
-  },
-  {
-    title: "Product audits",
-    description:
-      "A focused review of an existing product with a prioritised list of what to fix first.",
-  },
-  {
-    title: "Prototyping & testing",
-    description:
-      "Interactive prototypes and light user testing to settle big decisions before build time.",
-  },
-];
+function HomePage() {
+  useReveal();
+  const flagship = EVENTS.find((e) => e.slug === "the-best-manager")!;
 
-const elsewhere = [
-  { label: "Read.cv", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "Are.na", href: "#" },
-];
-
-function Index() {
   return (
-    <main id="top" className="min-h-screen bg-background font-body text-foreground antialiased">
-      {/* Masthead + hero */}
-      <section className="bg-background py-6 sm:py-10">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <header className="flex items-center justify-between pb-8 sm:pb-10">
-            <a href="#top" className="font-display text-lg font-medium tracking-tight">
-              Mara Ellison
-            </a>
-            <nav className="hidden items-center gap-7 text-[13px] text-foreground/60 sm:flex">
-              <a href="#work" className="transition-colors hover:text-clay">
-                Work
-              </a>
-              <a href="#about" className="transition-colors hover:text-clay">
-                About
-              </a>
-              <a href="#services" className="transition-colors hover:text-clay">
-                Services
-              </a>
-              <a href="#contact" className="text-foreground transition-colors hover:text-clay">
-                Contact
-              </a>
-            </nav>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-1.5 py-2 pl-2 pr-3 text-[13px] text-foreground sm:hidden"
+    <div>
+      {/* ============ Hero ============ */}
+      <section className="relative overflow-hidden bg-navy-deep text-ivory">
+        <img
+          src={heroImg}
+          alt="City skyline at dusk seen from a boardroom"
+          width={1536}
+          height={864}
+          className="absolute inset-0 h-full w-full object-cover opacity-45"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/40 to-navy-deep" />
+        <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:py-40">
+          <p className="text-xs uppercase tracking-[0.3em] text-gold sm:text-sm">
+            {FEST.college} · {FEST.department}
+          </p>
+          <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] sm:text-6xl lg:text-7xl">
+            ComConnect presents a{" "}
+            <span className="text-gold">National Level</span> Management Fest
+          </h1>
+          <p className="mt-6 max-w-xl text-base text-white/75 sm:text-lg">
+            Two days. Seven events. The sharpest business minds from colleges
+            across the country — on one campus.
+          </p>
+
+          <dl className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
+            <div>
+              <dt className="text-[11px] uppercase tracking-[0.2em] text-white/50">
+                Dates
+              </dt>
+              <dd className="mt-1 font-display text-xl text-gold sm:text-2xl">
+                Sept 30 <span className="text-white/60">Wed</span> · Oct 1{" "}
+                <span className="text-white/60">Thu</span>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-[11px] uppercase tracking-[0.2em] text-white/50">
+                Prize pool
+              </dt>
+              <dd className="mt-1 font-display text-xl text-gold sm:text-2xl">
+                Worth ₹1 Lakh+
+              </dd>
+            </div>
+            <div>
+              <dt className="text-[11px] uppercase tracking-[0.2em] text-white/50">
+                Events
+              </dt>
+              <dd className="mt-1 font-display text-xl text-gold sm:text-2xl">
+                7 Competitions
+              </dd>
+            </div>
+          </dl>
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link
+              to="/events"
+              className="bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-navy-deep transition-colors hover:bg-gold-soft"
             >
-              <span className="grid size-4 place-items-center text-clay">✉</span>
-              Say hi
-            </a>
-          </header>
-
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-10">
-            <div className="lg:col-span-7">
-              <p className="reveal reveal-1 text-[11px] font-medium uppercase tracking-[0.28em] text-clay">
-                Independent product designer
-              </p>
-              <h1 className="reveal reveal-2 mt-5 font-display text-[clamp(2.6rem,9vw,5rem)] font-medium leading-[1.02] tracking-[-0.02em] text-balance">
-                Calm, considered <span className="italic text-sage">interfaces</span> for people
-                who build carefully.
-              </h1>
-              <p className="reveal reveal-3 mt-7 max-w-[46ch] text-pretty text-base text-foreground/70 sm:text-lg">
-                I'm Mara. For eight years I've helped small teams turn tangled workflows into
-                products that feel quiet, legible, and a little bit inevitable.
-              </p>
-              <div className="reveal reveal-4 mt-8 flex flex-wrap items-center gap-2">
-                <a
-                  href="#work"
-                  className="inline-flex items-center gap-2 rounded-[min(1vw,10px)] bg-primary px-5 py-3 text-sm font-medium text-primary-foreground ring-1 ring-primary transition-colors hover:bg-sage hover:ring-sage"
-                >
-                  See the work
-                  <span className="grid size-4 place-items-center">→</span>
-                </a>
-                <a
-                  href="#services"
-                  className="inline-flex items-center gap-2 rounded-[min(1vw,10px)] px-5 py-3 text-sm font-medium text-foreground ring-1 ring-foreground/20 transition-colors hover:ring-foreground/50"
-                >
-                  What I do
-                </a>
-              </div>
-            </div>
-            <div className="reveal reveal-2 lg:col-span-5">
-              <img
-                src={portrait}
-                alt="Portrait of Mara Ellison in a linen shirt by a warm window"
-                width={1080}
-                height={1440}
-                className="aspect-[4/5] w-full rounded-[min(1vw,12px)] object-cover outline-1 -outline-offset-1 outline-black/5"
-              />
-            </div>
-          </div>
-
-          <div className="mt-10 flex flex-wrap gap-x-10 gap-y-3 border-t border-border/70 pt-6 text-[13px] text-foreground/55 lg:mt-14">
-            <span className="flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-clay" />
-              Available for Q3 projects
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-sage" />
-              Based in Asheville, NC
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-foreground/40" />
-              Remote-friendly, GMT-5
-            </span>
+              Explore events
+            </Link>
+            <Link
+              to="/contact"
+              className="border border-white/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-ivory transition-colors hover:border-gold hover:text-gold"
+            >
+              Register your team
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Selected work */}
-      <section id="work" className="bg-secondary py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="mb-9 flex items-end justify-between gap-4">
+      {/* ============ Event strip ============ */}
+      <section className="rule-double bg-background">
+        <div className="mx-auto max-w-6xl overflow-hidden px-4 py-3 sm:px-6">
+          <p className="whitespace-nowrap text-center font-display text-sm italic text-muted-foreground">
+            The Wolfs of the Wall Street · Goodwill Hunting · Squid Game · John
+            Wick · SCAM (1992) · The Billion Dollar Code · The Office
+          </p>
+        </div>
+      </section>
+
+      {/* ============ About ============ */}
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+        <div className="reveal grid gap-10 lg:grid-cols-[1fr_1.4fr]">
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-gold">
+              About the fest
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
+              Where future managers are made
+            </h2>
+          </div>
+          <div className="space-y-4 text-muted-foreground sm:text-lg">
+            <p>
+              ComConnect — the commerce association of the PG Department of
+              Commerce, Jamia Hamdard Kannur Campus — opens its doors to
+              colleges nationwide for two days of competition, strategy and
+              showcase.
+            </p>
+            <p>
+              From the boardroom to the trading floor, every event is built
+              around a film you know and a skill the industry demands. Bring
+              your team, test your nerve, and take your share of a prize pool
+              worth over one lakh rupees.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ Events grid ============ */}
+      <section className="bg-navy py-20 text-ivory sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="reveal flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-clay">
-                Selected work
+              <p className="text-xs uppercase tracking-[0.25em] text-gold">
+                The line-up
               </p>
-              <h2 className="mt-3 font-display text-3xl font-medium tracking-tight text-balance sm:text-4xl">
-                Three recent projects
+              <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
+                Seven events, seven stories
               </h2>
             </div>
-            <a
-              href="#contact"
-              className="hidden text-[13px] text-foreground/60 transition-colors hover:text-clay sm:inline"
+            <Link
+              to="/events"
+              className="text-sm font-medium uppercase tracking-[0.14em] text-gold transition-colors hover:text-gold-soft"
             >
-              Full archive →
-            </a>
+              View all details →
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {projects.map((project) => (
-              <article
-                key={project.title}
-                className="group flex flex-col overflow-hidden rounded-[min(1.4vw,14px)] bg-card ring-1 ring-black/5"
+          <div className="mt-12 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+            {EVENTS.map((event) => (
+              <Link
+                key={event.slug}
+                to="/events/$slug"
+                params={{ slug: event.slug }}
+                className="reveal group bg-navy p-6 transition-colors hover:bg-navy-soft sm:p-8"
               >
-                <img
-                  src={project.image}
-                  alt={project.alt}
-                  loading="lazy"
-                  width={1024}
-                  height={768}
-                  className="aspect-[4/3] w-full object-cover"
-                />
-                <div className="flex flex-1 flex-col p-5">
-                  <div className="flex items-center gap-2 text-[11px] text-foreground/50">
-                    <span className="uppercase tracking-[0.16em]">{project.category}</span>
-                    <span className="size-1 rounded-full bg-border" />
-                    <span>{project.year}</span>
-                  </div>
-                  <h3 className="mt-3 font-display text-xl font-medium">{project.title}</h3>
-                  <p className="mt-2 flex-1 text-pretty text-[15px] text-foreground/65">
-                    {project.description}
-                  </p>
-                  <a
-                    href="#contact"
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-clay transition-all group-hover:gap-2.5"
-                  >
-                    Case study <span className="grid size-4 place-items-center">→</span>
-                  </a>
-                </div>
-              </article>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-gold/80">
+                  {event.category}
+                </p>
+                <h3 className="mt-3 font-display text-xl font-semibold leading-snug">
+                  {event.movie}
+                </h3>
+                <p className="mt-1 text-sm text-white/60">{event.name}</p>
+                <p className="mt-4 text-sm text-gold">{event.tagline}</p>
+                <p className="mt-5 text-xs uppercase tracking-[0.14em] text-white/40 transition-colors group-hover:text-gold">
+                  Event details →
+                </p>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About + services */}
-      <section id="about" className="bg-background py-16 sm:py-24">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-5">
-            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-clay">About</p>
-            <h2 className="mt-3 font-display text-3xl font-medium tracking-tight text-balance sm:text-4xl">
-              A designer who reads the fine print
+      {/* ============ Flagship highlight ============ */}
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+        <div className="reveal grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-gold">
+              Flagship event
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-semibold sm:text-5xl">
+              {flagship.movie}
             </h2>
-            <p className="mt-6 max-w-[44ch] text-pretty text-base text-foreground/70 sm:text-lg">
-              I care about the small decisions: the empty state, the keyboard path, the sentence
-              that makes a confusing form make sense. Good interfaces feel less designed the more
-              thought goes into them.
+            <p className="mt-2 text-lg font-medium text-muted-foreground">
+              {flagship.name}
             </p>
-            <img
-              src={aboutDesk}
-              alt="Mara's desk from above with sketches, coffee and a laptop in warm light"
-              loading="lazy"
-              width={1024}
-              height={768}
-              className="mt-8 aspect-[4/3] w-full rounded-[min(1vw,12px)] object-cover outline-1 -outline-offset-1 outline-black/5"
-            />
+            <p className="mt-5 text-muted-foreground sm:text-lg">
+              {flagship.description}
+            </p>
           </div>
-
-          <div id="services" className="scroll-mt-24 lg:col-span-7">
-            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-clay">
-              Services
+          <div className="border border-gold/40 bg-secondary p-8 sm:p-10">
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              First prize
             </p>
-            <ul className="mt-5 divide-y divide-border/70">
-              {services.map((service, index) => (
-                <li key={service.title} className="flex items-start gap-4 py-5">
-                  <span className="w-6 shrink-0 text-right font-display text-lg text-sage">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-medium">{service.title}</h3>
-                    <p className="mt-1 max-w-[52ch] text-pretty text-[15px] text-foreground/65">
-                      {service.description}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <p className="mt-2 font-display text-6xl font-semibold text-navy">
+              {flagship.firstPrize}
+            </p>
+            <p className="mt-6 text-sm text-muted-foreground">
+              The single largest prize of the fest. One winner.
+            </p>
+            <Link
+              to="/events/$slug"
+              params={{ slug: flagship.slug }}
+              className="mt-8 inline-block bg-navy px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-ivory transition-colors hover:bg-navy-soft"
+            >
+              See how to win it
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="bg-foreground py-16 text-background sm:py-24">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
-            <div className="lg:col-span-7">
-              <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-clay">
-                Contact
-              </p>
-              <h2 className="mt-4 font-display text-[clamp(2rem,6vw,3.25rem)] font-medium leading-[1.06] tracking-[-0.02em] text-balance">
-                Have a product that deserves a little more care?
-              </h2>
-              <p className="mt-5 max-w-[46ch] text-pretty text-base text-background/70 sm:text-lg">
-                I take on a handful of projects each season. Tell me what you're building and where
-                it hurts, and I'll reply within two working days.
-              </p>
-              <div className="mt-8 flex flex-wrap items-center gap-2">
-                <a
-                  href="mailto:hello@maraellison.design"
-                  className="inline-flex items-center gap-2 rounded-[min(1vw,10px)] bg-clay px-5 py-3 text-sm font-medium text-background ring-1 ring-clay transition-colors hover:bg-background hover:text-foreground hover:ring-background"
-                >
-                  <span className="grid size-4 place-items-center">✉</span>
-                  hello@maraellison.design
-                </a>
-                <a
-                  href="#top"
-                  className="inline-flex items-center gap-2 rounded-[min(1vw,10px)] px-5 py-3 text-sm font-medium text-background ring-1 ring-background/25 transition-colors hover:ring-background/60"
-                >
-                  Book a call
-                </a>
-              </div>
-            </div>
-            <div className="lg:col-span-5">
-              <div className="rounded-[min(1.4vw,14px)] bg-background/5 p-6 ring-1 ring-background/10">
-                <h3 className="font-display text-lg font-medium">Elsewhere</h3>
-                <ul className="mt-4 space-y-1 text-[15px]">
-                  {elsewhere.map((link) => (
-                    <li key={link.label}>
-                      <a
-                        href={link.href}
-                        className="flex items-center justify-between py-2 text-background/75 transition-colors hover:text-clay"
-                      >
-                        {link.label} <span className="grid size-4 place-items-center">↗</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-background/15 pt-6 text-[13px] text-background/50 sm:flex-row sm:items-center">
-            <span className="font-display">Mara Ellison</span>
-            <span>© 2026 — Designed and built in the open.</span>
+      {/* ============ CTA ============ */}
+      <section className="bg-navy-deep py-20 text-center text-ivory sm:py-24">
+        <div className="reveal mx-auto max-w-2xl px-4 sm:px-6">
+          <h2 className="font-display text-3xl font-semibold sm:text-4xl">
+            Seats fill fast. Bring your best team.
+          </h2>
+          <p className="mt-4 text-white/65">
+            {FEST.dateShort} · {FEST.college}
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link
+              to="/contact"
+              className="bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-navy-deep transition-colors hover:bg-gold-soft"
+            >
+              Get in touch
+            </Link>
+            <Link
+              to="/schedule"
+              className="border border-white/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-ivory transition-colors hover:border-gold hover:text-gold"
+            >
+              View schedule
+            </Link>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
