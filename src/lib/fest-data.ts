@@ -143,7 +143,7 @@ export const EVENTS: FestEvent[] = [
       "Teams of 4 members.",
       "Registration Fee: ₹250 per participant.",
       "Participants must carry a mobile phone, and each team must have one laptop.",
-      "Judges' feedback is part of scoring; decisions are final.",
+      "Student Co- Ordinator: Ms. Fathimath Saniya T K, Mob: 8891134928",
     ],
   },
 ];
