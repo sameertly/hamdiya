@@ -78,9 +78,8 @@ function HomePage() {
           <p className="text-xs uppercase tracking-[0.3em] text-gold sm:text-sm">
             {FEST.college} · {FEST.department}
           </p>
-          <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] text-ivory sm:text-6xl lg:text-7xl">
-            ComConnect presents a{" "}
-            <span className="text-gold">National Level</span> Management Fest
+          <h1 className="mt-6 max-w-3xl whitespace-pre-line font-display text-4xl font-semibold leading-[1.05] text-ivory sm:text-6xl lg:text-7xl">
+            {"    HAMDIYA 2K6\n National Level Management Fest"}
           </h1>
           <p className="mt-6 max-w-xl text-base text-white/75 sm:text-lg">
             Two days. Seven events. The sharpest business minds from colleges
