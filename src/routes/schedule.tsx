@@ -30,8 +30,8 @@ const DAYS = [
     filter: (day: string) => day === "Day 1" || day === "Both",
   },
   {
-    label: "Day 2",
-    date: "Thursday, October 1, 2026",
+    label: "",
+    date: "",
     filter: (day: string) => day === "Day 2" || day === "Both",
   },
 ] as const;
