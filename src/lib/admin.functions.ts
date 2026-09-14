@@ -21,7 +21,7 @@ export const getRegistrations = createServerFn({ method: "GET" })
     const { data: roles } = await context.supabase
       .from("user_roles" as unknown as "registrations")
       .select("role" as unknown as "event_slug")
-      .eq("user_id", context.userId);
+      .eq("user_id" as unknown as "event_slug", context.userId);
     const isAdmin = ((roles ?? []) as unknown as { role: string }[]).some(
       (r) => r.role === "admin"
     );
