@@ -59,9 +59,26 @@ function EventsPage() {
           <h1 className="mt-3 font-display text-4xl font-semibold sm:text-5xl">
             General Rules & Guidelines
           </h1>
-          <p className="mt-4 max-w-2xl text-white/65">
-            Every event takes its name from a film and its fight from the
-            business world. Pick your arena.
+          <p className="mt-4 max-w-2xl whitespace-pre-line text-white/65">
+            {`1. Registration is mandatory for participation in all events. Participants must report on time and adhere to the schedule provided by the organizers.
+
+2. All participants must carry a valid college/institutional ID card and produce it whenever required by the organizers.
+
+3. All members of a team must belong to the same college/institution. There is no limit on the number of teams that may participate from a single college/institution.
+
+4. Students from all academic disciplines are eligible to participate, including students pursuing professional courses or coaching programmes such as CA, CMA, CS, and ACCA.
+
+5. The rules and instructions for each round will be announced before its commencement and must be strictly followed. Teams must qualify in each round to proceed to the subsequent round(s), wherever applicable.
+
+6. Time limits prescribed for each activity/round must be strictly adhered to. Exceeding the allotted time may result in a penalty or disqualification.
+
+7. Use of electronic devices and internet facilities is permitted only when specifically authorized by the organizers.
+
+8. Misconduct, malpractice, cheating, or violation of event rules will result in disqualification. All participants must maintain discipline, professionalism, sportsmanship, and fair play throughout the event.
+
+9. Participants are required to cooperate with the organizers and comply with all event-related instructions to ensure the smooth and fair conduct of the event.
+
+10. The decision of the judges/jury will be final and binding in all matters concerning the event`}
           </p>
         </div>
       </section>
