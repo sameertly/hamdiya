@@ -135,8 +135,7 @@ function HomePage() {
       <section className="rule-double bg-background">
         <div className="mx-auto max-w-6xl overflow-hidden px-4 py-3 sm:px-6">
           <p className="whitespace-nowrap text-center font-display text-sm italic text-muted-foreground">
-            The Wolfs of the Wall Street · Goodwill Hunting · Squid Game · John
-            Wick · SCAM (1992) · The Billion Dollar Code · The Office
+            
           </p>
         </div>
       </section>
