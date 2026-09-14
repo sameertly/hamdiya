@@ -87,7 +87,7 @@ function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link to="/" className="flex shrink-0 flex-col leading-tight">
           <span className="font-display text-lg font-semibold tracking-wide text-gold">
-            Com<span className="text-ivory">Connect</span>
+            HAMDIYA 2K26<span className="text-ivory"></span>
           </span>
           <span className="hidden text-[10px] uppercase tracking-[0.18em] text-white/50 sm:block">
             {FEST.college}
