@@ -54,7 +54,7 @@ function ContactPage() {
                 {
                   step: "01",
                   title: "Form your team",
-                  body: "Check each event page for team sizes — most events take 2–4 members, and The Best Manager is a solo flagship.",
+                  body: "Check each event page for team sizes — most events take 4 members, and The Best Manager is a solo flagship.",
                 },
                 {
                   step: "02",
