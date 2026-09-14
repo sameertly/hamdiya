@@ -34,7 +34,7 @@ export const Route = createFileRoute("/")({
         name: "twitter:image",
         content: new URL(heroImg, "https://id-preview--7747fa64-7a04-463d-ae3b-e03fedb32a97.lovable.app").href,
       },
-水    ],
+],
   }),
   component: HomePage,
 });
