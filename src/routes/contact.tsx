@@ -102,11 +102,8 @@ function ContactPage() {
               <h3 className="font-display text-xl font-semibold">
                 Coordinators
               </h3>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Staff and student coordinator names, phone numbers and the
-                official email will be published here shortly. For urgent
-                queries, reach the PG Department of Commerce office at Jamia
-                Hamdard Kannur Campus.
+              <p className="mt-3 whitespace-pre-line text-sm text-muted-foreground">
+                {"Staff Co-Ordinator: Ms. Salina P K, Mob: 9847853935\nStudent Co-Ordinator: Ms. Fathimathul Rifa P K, Mob: 9544998385\n\n\n"}
               </p>
               <Link
                 to="/events"
