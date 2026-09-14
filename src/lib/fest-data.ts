@@ -87,10 +87,10 @@ export const EVENTS: FestEvent[] = [
     firstPrize: "₹15,026",
     day: "Day 2",
     rules: [
-      "Individual event — one participant per entry.",
-      "Multiple elimination rounds across the day.",
-      "Formal dress code is mandatory.",
-      "Carry your own stationery; materials for rounds will be provided.",
+      "Individual event – Open to individual participants only.",
+      "Registration Fee: ₹350 per participant.",
+      "Participants must carry a mobile phone, and each team must have one laptop.",
+      "Student Co- Ordinator: Ms. Mehbooba, Mob: 79091 88127",
     ],
   },
   {
