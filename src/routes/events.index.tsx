@@ -57,7 +57,7 @@ function EventsPage() {
             Competitions
           </p>
           <h1 className="mt-3 font-display text-4xl font-semibold sm:text-5xl">
-            The line-up
+            General Rules & Guidelines
           </h1>
           <p className="mt-4 max-w-2xl text-white/65">
             Every event takes its name from a film and its fight from the
