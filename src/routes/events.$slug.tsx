@@ -56,7 +56,7 @@ function EventDetailPage() {
             ← All events
           </Link>
           <p className="mt-8 text-xs uppercase tracking-[0.25em] text-gold">
-            {event.category} · {event.day}
+            HUMAN RESOURCES
           </p>
           <h1 className="mt-3 font-display text-4xl font-semibold sm:text-5xl">
             {event.movie}
