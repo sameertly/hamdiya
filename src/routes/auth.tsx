@@ -5,7 +5,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable";
 
 export const Route = createFileRoute("/auth")({
-  validateSearch: (search: Record<string, unknown>): { redirect?: string } => ({
+  validateSearch: (
+    search: Record<string, unknown>
+  ): { redirect?: string | undefined } => ({
     redirect:
       typeof search["redirect"] === "string"
         ? (search["redirect"] as string)
