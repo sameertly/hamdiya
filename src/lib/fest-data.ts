@@ -104,10 +104,10 @@ export const EVENTS: FestEvent[] = [
     prizeNote: "Prizes worth ₹5,766",
     day: "Both",
     rules: [
-      "On-the-spot registration at the venue.",
-      "Individual and team rounds announced hourly.",
-      "Participation is first-come, first-served.",
-      "Prize pool of ₹5,766 spread across rounds.",
+      "Details regarding participation, registration fee, team size, game format, and other rules will be announced on the spot.",
+      "The rules and instructions for each game will be announced before the commencement of the respective game and must be strictly followed.",
+      "Participants must be available at the designated venue when the spot game is announced.",
+      "",
     ],
   },
   {
