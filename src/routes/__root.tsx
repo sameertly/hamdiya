@@ -119,8 +119,8 @@ function SiteFooter() {
             <p className="font-display text-xl font-semibold text-gold">
               ComConnect
             </p>
-            <p className="mt-1 text-sm">
-              {FEST.department} · {FEST.college}
+            <p className="mt-1 whitespace-pre-line text-sm">
+              {FEST.department} · {FEST.college}{"\n"}Kannur City
             </p>
             <p className="mt-3 text-sm">
               {FEST.title} — {FEST.dateShort}
