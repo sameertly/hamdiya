@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { EVENTS, getEvent } from "@/lib/fest-data";
+import { RegistrationForm } from "@/components/RegistrationForm";
 
 export const Route = createFileRoute("/events/$slug")({
   loader: ({ params }) => {
@@ -87,21 +88,7 @@ function EventDetailPage() {
               ))}
             </ul>
 
-            <div className="mt-12 border border-border bg-secondary p-6 sm:p-8">
-              <h3 className="font-display text-xl font-semibold">
-                Want to compete?
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Registrations are handled by the ComConnect team. Reach out with
-                your college name, team size and the events you're entering.
-              </p>
-              <Link
-                to="/contact"
-                className="mt-5 inline-block bg-navy px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] text-ivory transition-colors hover:bg-navy-soft"
-              >
-                Contact us
-              </Link>
-            </div>
+            <RegistrationForm event={event} />
           </div>
 
           <aside>
