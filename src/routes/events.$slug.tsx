@@ -57,7 +57,7 @@ function EventDetailPage() {
             ← All events
           </Link>
           <p className="mt-8 text-xs uppercase tracking-[0.25em] text-gold">
-            HUMAN RESOURCES
+            BATTLE OF THE BEST MANAGEMENT TEAMS
           </p>
           <h1 className="mt-3 font-display text-4xl font-semibold sm:text-5xl">
             {event.movie}
