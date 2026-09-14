@@ -124,8 +124,8 @@ export const EVENTS: FestEvent[] = [
     rules: [
       "Each team must consist of exactly 4 members.",
       "\n",
-      "Calculators permitted; internet use during rounds is prohibited.",
-      "Fake portfolios or tampered sheets lead to elimination.",
+      "Participants must carry a mobile phone, and each team must have one laptop.",
+      "Student Co- Ordinator: Ms. Hinana Parveen A K, Mob: 94953 91989",
     ],
   },
   {
