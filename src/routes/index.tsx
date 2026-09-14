@@ -75,8 +75,8 @@ function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/40 to-navy-deep" />
         <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:py-40">
-          <p className="text-xs uppercase tracking-[0.3em] text-gold sm:text-sm">
-            {FEST.college} · {FEST.department}
+          <p className="whitespace-pre-line text-xs uppercase tracking-[0.3em] text-gold sm:text-sm">
+            {"            JAMIA HAMDARD KANNUR CAMPUS \n             PG DEPARTMENT OF COMMERCE"}
           </p>
           <h1 className="mt-6 max-w-3xl whitespace-pre-line font-display text-4xl font-semibold leading-[1.05] text-ivory sm:text-6xl lg:text-7xl">
             {"    HAMDIYA 2K6\n National Level Management Fest"}
