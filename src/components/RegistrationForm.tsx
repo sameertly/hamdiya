@@ -91,7 +91,16 @@ export function RegistrationForm({ event }: { event: FestEvent }) {
           <span className="mb-1 block text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
             Phone
           </span>
-          <input required type="tel" maxLength={15} value={form.phone} onChange={set("phone")} className={inputClass} />
+          <input
+            required
+            type="tel"
+            maxLength={20}
+            inputMode="tel"
+            placeholder="+91 98765 43210"
+            value={form.phone}
+            onChange={set("phone")}
+            className={inputClass}
+          />
         </label>
         <label className="block sm:col-span-2">
           <span className="mb-1 block text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">

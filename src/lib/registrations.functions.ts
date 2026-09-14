@@ -13,7 +13,14 @@ export const registrationSchema = z.object({
   phone: z
     .string()
     .trim()
-    .regex(/^[+]?[0-9\s-]{7,15}$/, "Enter a valid phone number"),
+    .max(25)
+    .refine(
+      (v) => {
+        const digits = v.replace(/\D/g, "");
+        return /^[+]?[0-9\s().-]+$/.test(v) && digits.length >= 7 && digits.length <= 15;
+      },
+      { message: "Enter a valid phone number" }
+    ),
 });
 
 export const submitRegistration = createServerFn({ method: "POST" })
