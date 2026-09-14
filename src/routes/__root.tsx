@@ -136,6 +136,12 @@ function SiteFooter() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              to="/auth"
+              className="text-white/40 transition-colors hover:text-gold"
+            >
+              Organizer Login
+            </Link>
           </nav>
         </div>
         <div className="mt-8 border-t border-white/10 pt-5 text-xs text-white/40">
