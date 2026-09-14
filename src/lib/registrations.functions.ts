@@ -17,7 +17,7 @@ export const registrationSchema = z.object({
 });
 
 export const submitRegistration = createServerFn({ method: "POST" })
-  .inputValidator((data) => registrationSchema.parse(data))
+  .validator((data) => registrationSchema.parse(data))
   .handler(async ({ data }) => {
     const key = process.env["SUPABASE_PUBLISHABLE_KEY"]!;
     const supabase = createClient(process.env["SUPABASE_URL"]!, key, {
