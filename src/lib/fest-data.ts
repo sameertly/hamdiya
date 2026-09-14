@@ -142,7 +142,7 @@ export const EVENTS: FestEvent[] = [
     rules: [
       "Teams of 4 members.",
       "Registration Fee: ₹250 per participant.",
-      "Formal attire recommended for role-play rounds.",
+      "Participants must carry a mobile phone, and each team must have one laptop.",
       "Judges' feedback is part of scoring; decisions are final.",
     ],
   },
