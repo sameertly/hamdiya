@@ -141,7 +141,7 @@ export const EVENTS: FestEvent[] = [
     day: "Day 2",
     rules: [
       "Teams of 4 members.",
-      "Rounds include role-play, HR case analysis and a mock recruitment task.",
+      "Registration Fee: ₹250 per participant.",
       "Formal attire recommended for role-play rounds.",
       "Judges' feedback is part of scoring; decisions are final.",
     ],
