@@ -53,10 +53,10 @@ export const EVENTS: FestEvent[] = [
     secondPrize: "₹6,026",
     day: "Day 1",
     rules: [
-      "Teams of 2–4 members.",
-      "Rounds include ad creation, brand pitching and on-the-spot marketing tasks.",
-      "Products or briefs for live rounds will be provided at the venue.",
-      "Use of offensive content leads to instant disqualification.",
+      "Each team must consist of exactly 4 members.",
+      "Registration Fee: ₹250 per participant.",
+      "Participants must carry a mobile phone, and each team must have one laptop.",
+      "Student Co- Ordinator: Ms. Laiba Jabin, Mob: 6282727833",
     ],
   },
   {
