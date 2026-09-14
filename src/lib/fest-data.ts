@@ -70,10 +70,10 @@ export const EVENTS: FestEvent[] = [
     firstPrize: "₹12,026",
     day: "Day 1",
     rules: [
-      "Teams of 3–5 members.",
-      "All clues must be solved within the campus premises.",
-      "No vehicles; no outside help; phones allowed only where the organizers permit.",
-      "Damaging clue stations leads to disqualification.",
+      "Each team must consist of exactly 4 members.",
+      "Registration Fee: ₹250 per participant.",
+      "Participants must carry a mobile phone.",
+      "Student Co- Ordinator: Ms. Fathimathul Shafna S, Mob: 9847403492",
     ],
   },
   {
