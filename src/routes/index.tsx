@@ -74,19 +74,19 @@ function HomePage() {
           className="absolute inset-0 h-full w-full object-cover opacity-45"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/40 to-navy-deep" />
-        <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:py-40">
+        <div className="relative mx-auto max-w-6xl px-4 py-24 text-center sm:px-6 sm:py-32 lg:py-40">
           <p className="whitespace-pre-line text-xs uppercase tracking-[0.3em] text-gold sm:text-sm">
-            {"            JAMIA HAMDARD KANNUR CAMPUS \n             PG DEPARTMENT OF COMMERCE"}
+            {"JAMIA HAMDARD KANNUR CAMPUS\nPG DEPARTMENT OF COMMERCE"}
           </p>
-          <h1 className="mt-6 max-w-3xl whitespace-pre-line font-display text-4xl font-semibold leading-[1.05] text-ivory sm:text-6xl lg:text-7xl">
-            {"    HAMDIYA 2K6\n National Level Management Fest"}
+          <h1 className="mx-auto mt-6 max-w-3xl whitespace-pre-line font-display text-4xl font-semibold leading-[1.05] text-ivory sm:text-6xl lg:text-7xl">
+            {"HAMDIYA 2K6\nNational Level Management Fest"}
           </h1>
-          <p className="mt-6 max-w-xl text-base text-white/75 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-xl text-base text-white/75 sm:text-lg">
             Two days. Seven events. The sharpest business minds from colleges
             across the country — on one campus.
           </p>
 
-          <dl className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
+          <dl className="mt-10 flex flex-wrap justify-center gap-x-12 gap-y-6">
             <div>
               <dt className="text-[11px] uppercase tracking-[0.2em] text-white/50">
                 Dates
@@ -114,7 +114,7 @@ function HomePage() {
             </div>
           </dl>
 
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Link
               to="/events"
               className="bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-navy-deep transition-colors hover:bg-gold-soft"
