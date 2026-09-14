@@ -114,6 +114,32 @@ function ContactPage() {
             </div>
           </div>
         </div>
+
+        <div className="mt-14">
+          <h2 className="font-display text-2xl font-semibold">Find us</h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Jamia Hamdard Kannur Campus, Kannur City, Kerala — the venue for
+            all fest events.
+          </p>
+          <div className="mt-6 border border-border bg-card p-2">
+            <iframe
+              title="Jamia Hamdard Kannur Campus on Google Maps"
+              src="https://www.google.com/maps?q=Jamia%20Hamdard%20Kannur%20Campus%2C%20Kannur%2C%20Kerala&output=embed"
+              className="h-[420px] w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Jamia+Hamdard+Kannur+Campus"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-block border border-navy px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] text-navy transition-colors hover:bg-navy hover:text-ivory"
+          >
+            Open in Google Maps
+          </a>
+        </div>
       </section>
     </div>
   );
