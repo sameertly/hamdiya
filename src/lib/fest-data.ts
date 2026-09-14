@@ -122,8 +122,8 @@ export const EVENTS: FestEvent[] = [
     secondPrize: "₹6,026",
     day: "Day 2",
     rules: [
-      "Teams of 2–3 members.",
-      "Rounds include a finance quiz, virtual trading and a case round.",
+      "Each team must consist of exactly 4 members.",
+      "\n",
       "Calculators permitted; internet use during rounds is prohibited.",
       "Fake portfolios or tampered sheets lead to elimination.",
     ],
