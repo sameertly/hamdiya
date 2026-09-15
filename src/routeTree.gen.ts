@@ -15,6 +15,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ScheduleRouteImport } from './routes/schedule'
+import { Route as SponsorsRouteImport } from './routes/sponsors'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as EventsSlugRouteImport } from './routes/events.$slug'
@@ -48,6 +49,11 @@ const ScheduleRoute = ScheduleRouteImport.update({
   path: '/schedule',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SponsorsRoute = SponsorsRouteImport.update({
+  id: '/sponsors',
+  path: '/sponsors',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -70,6 +76,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/events': typeof EventsRouteWithChildren
   '/schedule': typeof ScheduleRoute
+  '/sponsors': typeof SponsorsRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/events/$slug': typeof EventsSlugRoute
   '/events/': typeof EventsIndexRoute
@@ -79,6 +86,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/schedule': typeof ScheduleRoute
+  '/sponsors': typeof SponsorsRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/events/$slug': typeof EventsSlugRoute
   '/events': typeof EventsIndexRoute
@@ -91,6 +99,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/events': typeof EventsRouteWithChildren
   '/schedule': typeof ScheduleRoute
+  '/sponsors': typeof SponsorsRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/events/$slug': typeof EventsSlugRoute
   '/events/': typeof EventsIndexRoute
@@ -103,6 +112,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/events'
     | '/schedule'
+    | '/sponsors'
     | '/admin'
     | '/events/$slug'
     | '/events/'
@@ -112,6 +122,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/schedule'
+    | '/sponsors'
     | '/admin'
     | '/events/$slug'
     | '/events'
@@ -123,6 +134,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/events'
     | '/schedule'
+    | '/sponsors'
     | '/_authenticated/admin'
     | '/events/$slug'
     | '/events/'
@@ -135,6 +147,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   EventsRoute: typeof EventsRouteWithChildren
   ScheduleRoute: typeof ScheduleRoute
+  SponsorsRoute: typeof SponsorsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -179,6 +192,13 @@ declare module '@tanstack/react-router' {
       path: '/schedule'
       fullPath: '/schedule'
       preLoaderRoute: typeof ScheduleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sponsors': {
+      id: '/sponsors'
+      path: '/sponsors'
+      fullPath: '/sponsors'
+      preLoaderRoute: typeof SponsorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin': {
@@ -236,6 +256,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   EventsRoute: EventsRouteWithChildren,
   ScheduleRoute: ScheduleRoute,
+  SponsorsRoute: SponsorsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
