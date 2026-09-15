@@ -77,7 +77,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/events", label: "Events" },
-  { to: "/schedule", label: "Schedule" },
+  { to: "/sponsors", label: "Our Sponsors" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
