@@ -21,7 +21,7 @@ export const SPONSOR_TIERS: SponsorTier[] = [
     id: "powered-by",
     title: "Powered By",
     note: "Title partner of HAMDIYA'26",
-    sponsors: [{ ...EMPTY }],
+    sponsors: [{ name: "APS Academy", logo: "", instagram: "apsacademy" }],
   },
   {
     id: "stage-sponsor",
