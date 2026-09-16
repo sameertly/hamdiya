@@ -72,8 +72,7 @@ function SponsorsPage() {
             Our Sponsors
           </h1>
           <p className="mt-4 max-w-2xl text-white/65">
-            HAMDIYA'26 is made possible by our partners. Sponsor names, logos
-            and Instagram pages are added here as they are confirmed.
+            HAMDIYA'26 is made possible by our partners.&nbsp;
           </p>
         </div>
       </section>
