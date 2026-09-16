@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
@@ -120,6 +120,12 @@ function AdminPage() {
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
+            <Link
+              to="/manage-results"
+              className="border border-gold/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-gold transition-colors hover:bg-gold/10"
+            >
+              Update results
+            </Link>
             <button
               onClick={() => exportCsv(filtered)}
               disabled={filtered.length === 0}

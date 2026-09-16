@@ -14,9 +14,11 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EventsRouteImport } from './routes/events'
+import { Route as ResultsRouteImport } from './routes/results'
 import { Route as ScheduleRouteImport } from './routes/schedule'
 import { Route as SponsorsRouteImport } from './routes/sponsors'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedManageResultsRouteImport } from './routes/_authenticated/manage-results'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as EventsSlugRouteImport } from './routes/events.$slug'
 
@@ -44,6 +46,11 @@ const EventsRoute = EventsRouteImport.update({
   path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResultsRoute = ResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ScheduleRoute = ScheduleRouteImport.update({
   id: '/schedule',
   path: '/schedule',
@@ -59,6 +66,12 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedManageResultsRoute =
+  AuthenticatedManageResultsRouteImport.update({
+    id: '/manage-results',
+    path: '/manage-results',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const EventsIndexRoute = EventsIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -75,9 +88,11 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRouteWithChildren
+  '/results': typeof ResultsRoute
   '/schedule': typeof ScheduleRoute
   '/sponsors': typeof SponsorsRoute
   '/admin': typeof AuthenticatedAdminRoute
+  '/manage-results': typeof AuthenticatedManageResultsRoute
   '/events/$slug': typeof EventsSlugRoute
   '/events/': typeof EventsIndexRoute
 }
@@ -85,9 +100,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/results': typeof ResultsRoute
   '/schedule': typeof ScheduleRoute
   '/sponsors': typeof SponsorsRoute
   '/admin': typeof AuthenticatedAdminRoute
+  '/manage-results': typeof AuthenticatedManageResultsRoute
   '/events/$slug': typeof EventsSlugRoute
   '/events': typeof EventsIndexRoute
 }
@@ -98,9 +115,11 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRouteWithChildren
+  '/results': typeof ResultsRoute
   '/schedule': typeof ScheduleRoute
   '/sponsors': typeof SponsorsRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
+  '/_authenticated/manage-results': typeof AuthenticatedManageResultsRoute
   '/events/$slug': typeof EventsSlugRoute
   '/events/': typeof EventsIndexRoute
 }
@@ -111,9 +130,11 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/events'
+    | '/results'
     | '/schedule'
     | '/sponsors'
     | '/admin'
+    | '/manage-results'
     | '/events/$slug'
     | '/events/'
   fileRoutesByTo: FileRoutesByTo
@@ -121,9 +142,11 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/contact'
+    | '/results'
     | '/schedule'
     | '/sponsors'
     | '/admin'
+    | '/manage-results'
     | '/events/$slug'
     | '/events'
   id:
@@ -133,9 +156,11 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/events'
+    | '/results'
     | '/schedule'
     | '/sponsors'
     | '/_authenticated/admin'
+    | '/_authenticated/manage-results'
     | '/events/$slug'
     | '/events/'
   fileRoutesById: FileRoutesById
@@ -146,6 +171,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
   EventsRoute: typeof EventsRouteWithChildren
+  ResultsRoute: typeof ResultsRoute
   ScheduleRoute: typeof ScheduleRoute
   SponsorsRoute: typeof SponsorsRoute
 }
@@ -187,6 +213,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/results': {
+      id: '/results'
+      path: '/results'
+      fullPath: '/results'
+      preLoaderRoute: typeof ResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/schedule': {
       id: '/schedule'
       path: '/schedule'
@@ -208,6 +241,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/manage-results': {
+      id: '/_authenticated/manage-results'
+      path: '/manage-results'
+      fullPath: '/manage-results'
+      preLoaderRoute: typeof AuthenticatedManageResultsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/events/': {
       id: '/events/'
       path: '/'
@@ -227,10 +267,12 @@ declare module '@tanstack/react-router' {
 
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+  AuthenticatedManageResultsRoute: typeof AuthenticatedManageResultsRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+  AuthenticatedManageResultsRoute: AuthenticatedManageResultsRoute,
 }
 
 const AuthenticatedRouteRouteWithChildren =
@@ -255,6 +297,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
   EventsRoute: EventsRouteWithChildren,
+  ResultsRoute: ResultsRoute,
   ScheduleRoute: ScheduleRoute,
   SponsorsRoute: SponsorsRoute,
 }
