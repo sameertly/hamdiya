@@ -53,6 +53,45 @@ export type Database = {
         }
         Relationships: []
       }
+      results: {
+        Row: {
+          college: string
+          created_at: string
+          event_name: string
+          event_slug: string
+          id: string
+          note: string
+          position: string
+          sort_order: number
+          team_name: string
+          updated_at: string
+        }
+        Insert: {
+          college?: string
+          created_at?: string
+          event_name: string
+          event_slug: string
+          id?: string
+          note?: string
+          position: string
+          sort_order?: number
+          team_name: string
+          updated_at?: string
+        }
+        Update: {
+          college?: string
+          created_at?: string
+          event_name?: string
+          event_slug?: string
+          id?: string
+          note?: string
+          position?: string
+          sort_order?: number
+          team_name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           id: string
