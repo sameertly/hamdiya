@@ -1,3 +1,5 @@
+import apsAcademyLogo from "@/assets/aps-academy-logo.png.asset.json";
+
 export type Sponsor = {
   /** Sponsor display name — leave "" until confirmed */
   name: string;
@@ -21,7 +23,13 @@ export const SPONSOR_TIERS: SponsorTier[] = [
     id: "powered-by",
     title: "Powered By",
     note: "Title partner of HAMDIYA'26",
-    sponsors: [{ name: "APS Academy", logo: "", instagram: "apsacademy" }],
+    sponsors: [
+      {
+        name: "APS Academy",
+        logo: apsAcademyLogo.url,
+        instagram: "apsacademy",
+      },
+    ],
   },
   {
     id: "stage-sponsor",
