@@ -120,6 +120,12 @@ function AdminPage() {
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
+            <Link
+              to="/manage-results"
+              className="border border-gold/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-gold transition-colors hover:bg-gold/10"
+            >
+              Update results
+            </Link>
             <button
               onClick={() => exportCsv(filtered)}
               disabled={filtered.length === 0}
