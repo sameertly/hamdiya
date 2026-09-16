@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { EVENTS } from "@/lib/fest-data";
 import { fetchResults, POSITIONS, type ResultRow } from "@/lib/results-data";
 
-export const Route = createFileRoute("/_authenticated/results")({
+export const Route = createFileRoute("/_authenticated/manage-results")({
   head: () => ({
     meta: [
       { title: "Update Results — Organizer View | HAMDIYA 2K26" },
