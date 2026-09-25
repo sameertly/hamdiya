@@ -85,7 +85,7 @@ export const EVENTS: FestEvent[] = [
     description:
       "Our flagship solo event. Across interviews, rapid-fire rounds, crisis simulations and final presentations, one participant proves they deserve to be called the best manager.",
     firstPrize: "₹15,026",
-    day: "Day 2",
+    day: "Day 1",
     rules: [
       "Individual event – Open to individual participants only.",
       "Registration Fee: ₹350 per participant.",
