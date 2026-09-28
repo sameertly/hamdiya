@@ -88,7 +88,7 @@ function EventDetailPage() {
               ))}
             </ul>
 
-            <RegistrationForm event={event} />
+            {event.slug !== "spot-games" && <RegistrationForm event={event} />}
           </div>
 
           <aside>
