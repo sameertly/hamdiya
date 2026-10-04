@@ -36,7 +36,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: import("@tanstack/react-router").ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -78,6 +78,7 @@ const NAV = [
   { to: "/", label: "Home" },
   { to: "/events", label: "Events" },
   { to: "/results", label: "Results" },
+  { to: "/certificates", label: "Certificates" },
   { to: "/sponsors", label: "Our Sponsors" },
   { to: "/contact", label: "Contact" },
 ] as const;
