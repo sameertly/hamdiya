@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SPONSOR_TIERS, type Sponsor } from "@/lib/sponsors-data";
 import { FEST } from "@/lib/fest-data";
+import apsAcademyLogo from "@/assets/aps-academy-logo.png.asset.json";
 
 export const Route = createFileRoute("/sponsors")({
   head: () => ({
@@ -74,6 +75,29 @@ function SponsorsPage() {
           <p className="mt-4 max-w-2xl text-white/65">
             HAMDIYA'26 is made possible by our partners.&nbsp;
           </p>
+          <div className="mt-8 flex max-w-2xl flex-col items-center gap-4 border border-gold/50 bg-white/5 p-6 text-center sm:flex-row sm:text-left">
+            <img
+              src={apsAcademyLogo.url}
+              alt="APS Academy logo"
+              className="h-16 w-auto max-w-[180px] object-contain"
+            />
+            <div>
+              <p className="text-xs uppercase tracking-[0.25em] text-gold">
+                Powered by
+              </p>
+              <p className="mt-1 font-display text-2xl font-semibold text-ivory">
+                APS Academy
+              </p>
+              <a
+                href="https://instagram.com/apsacademy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-white/65 transition-colors hover:text-gold"
+              >
+                @apsacademy
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
