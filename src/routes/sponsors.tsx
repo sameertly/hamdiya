@@ -55,7 +55,7 @@ function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
           @{sponsor.instagram}
         </a>
       ) : (
-        <span className="mt-1 text-sm text-muted-foreground">@—</span>
+        <span className="mt-1 text-sm text-muted-foreground">{"@prodigy.kannur_\n"}</span>
       )}
     </div>
   );
